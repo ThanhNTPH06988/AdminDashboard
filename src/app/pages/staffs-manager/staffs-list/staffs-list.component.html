@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <!-- .left-right-aside-column-->
+            <div class="contact-page-aside">
+                <!-- .left-aside-column-->
+
+                <!-- /.left-aside-column-->
+                <div class="right-aside ">
+                    <div class="right-page-header">
+                        <div class="d-flex mr-4 ml-4">
+                            <div class="align-self-center">
+                                <input type="text" id="demo-input-search2" placeholder="search contacts" class="form-control">
+
+                            </div>
+                            <div class="ml-auto">
+                                <!-- Nút thêm -->
+                                <br>
+                                <button type="button" class="btn btn-outline-primary" (click)="onDialogAdd()"> Add New Staff</button>
+                                <br>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="table-responsive">
+                        <table id="demo-foo-addrow" class="table no-wrap table-bordered m-t-30 table-hover contact-list text-center" data-paging="true" data-paging-size="7">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Username</th>
+                                    <th>Fullname</th>
+                                    <th>Role</th>
+                                    <th>Gender</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let stf of staffs; let i = index">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>{{stf.username}}</td>
+                                        <td>{{stf.fullname}}</td>
+                                        <td>{{stf.role ? "Trưởng Phòng" : "Nhân Viên"}}</td>
+                                        <td>{{stf.gender ? "Nam": "Nữ"}}</td>
+                                        <td>{{stf.email}}</td>
+                                        <td>{{stf.phoneNumb}}</td>
+                                        <td>{{stf.address}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary" (click)="onDialogEdit(stf)"><i class="fas fa-file-signature"></i></button>
+                                        </td>
+                                        <td>
+                                            <button type="button " class="btn btn-danger " (click)="deleteStaffs(stf.id)"><i class="fa fa-trash "></i></button>
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- .left-aside-column-->
+                </div>
+                <!-- /.left-right-aside-column-->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <!-- .left-right-aside-column-->
+            <div class="contact-page-aside">
+                <!-- .left-aside-column-->
+
+                <!-- /.left-aside-column-->
+                <div class="right-aside ">
+                    <div class="right-page-header">
+                        <div class="d-flex mr-4 ml-4">
+                            <div class="align-self-center">
+                                <input type="text" id="demo-input-search2" placeholder="search contacts" class="form-control">
+
+                            </div>
+                            <div class="ml-auto">
+                                <!-- Nút thêm -->
+                                <br>
+                                <button type="button" class="btn btn-outline-primary" (click)="onDialogAdd()">Add New Questions</button>
+                                <br>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="table-responsive">
+                        <table id="demo-foo-addrow" class="table no-wrap table-bordered m-t-30 table-hover contact-list text-center" data-paging="true" data-paging-size="7">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Lessons</th>
+                                    <th>Questions</th>
+                                    <th>Answer</th>
+                                    <th>CorrectAnswer</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let ques of questions; let i = index">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <!-- <td>{{ques.lessonId}}</td> -->
+                                        <td>{{lessonsMap?.get(ques.lessonId).lessonCode}}</td>
+                                        <td>
+                                            {{ques.content}}
+                                        </td>
+                                        <td>
+                                            {{ques.answers | json}}
+                                        </td>
+                                        <td>
+                                            {{ques.correctAnswer}}
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary" (click)="onDialogEdit(ques)"><i class="fas fa-file-signature"></i></button>
+
+                                        </td>
+                                        <td>
+                                            <button type="button " class="btn btn-outline-danger " (click)="deleteQuestion(ques.id) "><i class="fa fa-trash "></i></button>
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- .left-aside-column-->
+                </div>
+                <!-- /.left-right-aside-column-->
+            </div>
+        </div>
+    </div>
+</div>

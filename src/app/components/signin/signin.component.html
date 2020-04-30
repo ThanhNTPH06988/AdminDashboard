@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="card text-left  ml-10">
+            <div class="card-body">
+                <h3 class="card-title">Sign In</h3>
+                <br>
+                <div class="form-group">
+                    <input [(ngModel)]="email" type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Email......">
+                    <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                </div>
+                <br>
+                <div class="form-group">
+                    <input [(ngModel)]="pass" type="password" class="form-control" name="pass" id="pass" aria-describedby="helpId" placeholder="Password......">
+                    <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                </div>
+                <div class="d-flex no-block align-items-center" style="padding-top: 13px;">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Remember me</label>
+                    </div>
+                    <div class="ml-auto">
+                        <a id="to-recover" class="text-muted"><i class="fas fa-lock m-r-5"></i> Forgot pwd?</a>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-outline-primary" id="login" type="submit" (click)="login()">Login   <i class="fas fa-sign-in-alt"></i></button>
+                <br>
+                <br>
+                <button class="btn btn-facebook" data-toggle="tooltip" title="Login with Facebook" (click)="loginFace()"> <i  class="fab fa-facebook-f"></i> </button>
+                <button class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google" (click)="loginGoogle()"> <i  class="fab fa-google-plus-g"></i> </button>
+                <div class="signup text-muted">
+                    Don't have an account?
+                    <a class="text-info ml-2" style="color: #03a9f3;"><b>  Sign Up</b></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

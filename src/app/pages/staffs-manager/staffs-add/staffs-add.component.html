@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-between">
+    <h4>Add Staff</h4>
+    <button class="btn btn-outline-primary" (click)="onClose()"><i class="fas fa-window-close"></i></button>
+</div>
+<br>
+<br>
+<div class="container text-center">
+
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <div class="form-row">
+            <div class="col">
+                <div class=" form-group ">
+                    <input type="" class="form-control " placeholder="Username....." name="username" #username="ngModel" [(ngModel)]="stfs.formStaffs.username" required>
+                </div>
+                <div class="validation-error" *ngIf="username.invalid && username.touched">Mời Bạn Nhập Tài Khoản !!!</div>
+            </div>
+            <div class="col">
+                <div class="form-group ">
+                    <input type="password" class="form-control " placeholder="Password....." name="password" #password="ngModel" [(ngModel)]="stfs.formStaffs.password" required>
+                </div>
+                <div class="validation-error" *ngIf="password.invalid && password.touched">Mời Bạn Nhập Mật Khẩu !!!</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+                <div class=" form-group ">
+                    <input type="text " class="form-control " placeholder="Fullname....." name="fullname" #fullname="ngModel" [(ngModel)]="stfs.formStaffs.fullname" required>
+                </div>
+                <div class="validation-error" *ngIf="fullname.invalid && fullname.touched">Mời Bạn Nhập Họ Tên !!!</div>
+            </div>
+            <div class="col">
+                <div class="form-group ">
+                    <input type="text" class="form-control " placeholder="Phone....." name="phoneNumb" #phoneNumb="ngModel" [(ngModel)]="stfs.formStaffs.phoneNumb" required>
+                </div>
+                <div class="validation-error" *ngIf="phoneNumb.invalid && phoneNumb.touched">Mời Bạn Nhập Số Điện Thoại !!!</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+
+                <div class="form-group ">
+                    <select class="form-control" id="" name="role" #role="ngModel" [(ngModel)]="stfs.formStaffs.role">
+                  <option value="true">Trưởng Phòng</option>
+                  <option value="false">Nhân Viên</option>
+
+                </select>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="form-group ">
+                    <select class="form-control" id="" name="gender" #gender="ngModel" [(ngModel)]="stfs.formStaffs.gender">
+                  <option value="true">Nam</option>
+                  <option value="false">Nữ</option>
+                </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <input type="text" class="form-control" placeholder="Email....." name="email" #email="ngModel" [(ngModel)]="stfs.formStaffs.email" required pattern="^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$">
+        </div>
+        <!-- check trống -->
+        <div class="validation-error" *ngIf="email.errors?.required && email.touched">Mời Bạn Nhập Email !!!</div>
+        <!-- check regex email -->
+        <div class="validation-error" *ngIf="email.errors?.pattern">Sai định dạng Email ? Mời Bạn Nhập Lại !!!</div>
+
+        <div class="form-group ">
+            <input type="text" class="form-control " placeholder="Address....." name="address" #address="ngModel" [(ngModel)]="stfs.formStaffs.address" required>
+        </div>
+        <div class="validation-error" *ngIf="address.invalid && address.touched">Mời Bạn Nhập Địa Chỉ !!!</div>
+        <br>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-outline-primary"><i class="fas fa-check-double"></i>  Save</button>
+    </form>
+
+</div>

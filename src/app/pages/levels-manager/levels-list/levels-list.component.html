@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <!-- .left-right-aside-column-->
+            <div class="contact-page-aside">
+                <!-- .left-aside-column-->
+
+                <!-- /.left-aside-column-->
+                <div class="right-aside ">
+                    <div class="right-page-header">
+                        <div class="d-flex mr-4 ml-4">
+                            <div class="align-self-center">
+                                <!-- <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Search by name..." (keyup)="searchByName()"> -->
+
+                                <input type="text" id="demo-input-search2" [(ngModel)]="nameSearch" [ngModelOptions]="{standalone: true}" placeholder="Search by name..." (keyup)="searchByName()" class="form-control">
+
+                            </div>
+                            <div class="ml-auto">
+                                <!-- Nút thêm -->
+                                <br>
+                                <button type="button" class="btn btn-outline-primary" (click)="onDialogAdd()">Add New Levels</button>
+                                <br>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="table-responsive">
+                        <table id="demo-foo-addrow" class="table no-wrap table-bordered m-t-30 table-hover contact-list text-center" data-paging="true" data-paging-size="7">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Level Code</th>
+                                    <th>Level Name</th>
+                                    <th>Description</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let lev of levels; let i = index">
+                                    <tr>
+                                        <td>{{i+1}}</td>
+                                        <td>{{lev.levelCode}}</td>
+                                        <td>{{lev.levelName}}</td>
+                                        <td>{{lev.description}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary" (click)="onDialogEdit(lev)"><i class="fas fa-file-signature"></i></button>
+                                        </td>
+                                        <td>
+                                            <button type="button " class="btn btn-outline-danger " (click)="deleteLevels(lev.id) "><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- .left-aside-column-->
+                </div>
+                <!-- /.left-right-aside-column-->
+            </div>
+        </div>
+    </div>
+</div>

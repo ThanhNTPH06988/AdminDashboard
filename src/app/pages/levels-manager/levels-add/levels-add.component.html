@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-between">
+    <h4>Add New Levels</h4>
+    <button class="btn btn-outline-primary" (click)="onClose()"><i class="fas fa-window-close"></i></button>
+</div>
+<br>
+<br>
+<div class="container text-center">
+
+    <form #form="ngForm" (submit)="onSubmit(form)">
+        <div class="form-group ">
+            <input type="text " class="form-control" name="levelCode" placeholder="Level Code......" #levelCode="ngModel" [(ngModel)]="lvs.formLevels.levelCode" required="">
+        </div>
+
+        <div class="form-group ">
+            <input type="text " class="form-control" name="levelName" placeholder="Level Name......" #levelName="ngModel" [(ngModel)]="lvs.formLevels.levelName" required="">
+        </div>
+
+        <div class="form-group ">
+            <input type="text " class="form-control" name="description" placeholder="Description......." #description="ngModel" [(ngModel)]="lvs.formLevels.description" required="">
+        </div>
+        <br>
+        <button type="submit " class="btn btn-outline-primary"><i class="fas fa-check-double"></i>  Save</button>
+    </form>
+
+</div>

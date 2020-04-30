@@ -1,0 +1,16 @@
+.form-control {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+input.ng-dirty.ng-invalid {
+    border-color: red;
+}
+
+.validation-error {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: red;
+}
