@@ -2,7 +2,13 @@
     "name": "pro-dashboard-angular",
     "version": "0.0.0",
     "scripts": {
-        "scss": "node-sass --watch _navbar.scss -o css"
+        "scss": "node-sass --watch _navbar.scss -o css",
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e"
     },
     "private": true,
     "dependencies": {
